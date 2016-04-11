@@ -94,15 +94,367 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+* {
+    margin:0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+} 
+div#preloader { position: fixed; left: 0; top: 0; z-index: 99999; width: 100%; height: 100%; overflow: visible; background: #2980b9  no-repeat center center; color:#FFF; font-size: 48px;text-align: center; padding-top: 15%; }
 
+a {
+    text-decoration: none !important;
+    color:#FFF;
+}
+header {
+    background: #2980b9;
+    color:#FFF;
+    font-size: 24px;
+    padding:25% 5px;
+}
+header h1 {
+    text-align: center;
+    font-weight: 700;
+}
+header h1 span {
+    font-size:21px;
+    font-weight: 400;
+}
 
+nav.navigation {
+    width: 40%;
+    background: #3498db;
+    position: fixed;
+    top: 0;
+    left: -40%;
+    transition:ease 0.3s;
+    z-index: 9999;
+}
+nav.navigation.showed {
+    left:0;
+}
+nav.navigation.showed ul a.menuIcon {
+    background:#e74c3c;
+}
+nav.navigation ul {
+    padding: 20px;
+}
+nav.navigation ul h2 {
+    color:#FFF;
+}
+nav.navigation ul li  {
+    list-style: none;
+}
+nav.navigation ul li a {
+    font-size: 14px;
+    font-weight: 400;
+    display: block;
+    padding: 10px 0;
+    border-bottom: solid 1px #2980b9;
+    transition: ease 0.3s;
+}
+nav.navigation ul li a:hover {
+    color:#34495e;
+    background: #FFF; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(right, #FFF, #3498db); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #FFF, #3498db); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #FFF, #3498db); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(right, #FFF, #3498db); /* Standard syntax */
+}
+nav.navigation ul li a i {
+    margin-right: 10px;
+}
+nav.navigation ul a.menuIcon {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background: #3498db;
+    color:#FFF;
+    padding: 10px 15px;
+    transition: ease 0.3s;
+}
+nav.navigation ul a.menuIcon:hover {
+    background:#FFF;
+    color:#2980b9;
+}
+section .row {
+    width: 80%;
+    margin:auto;
+    padding: 30px 0;
+}
+section .row h2 {
+    font-size: 32px;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-weight: 400;
+}
+section .row p {
+    font-size: 24px;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-weight: 300;
+}
+pre {
+    border:none;
+}
+section#media-queries {
+    background: #f1c40f;
+    color:#c0392b;
+}
+section#selectores-css {
+    background: #2c3e50;
+    color:#f1c40f;
+}
+section#selectores-css .row p {
+    font-size: 18px;
+}
+section#selectores-css .row .row h4 {
+    position: relative;
+}
+/*section#selectores-css .row .row h4:after {
+    content: "*";
+    position: absolute;
+    font-family: Arial, sans-serif;
+    font-size: 100px;
+    top: -24px;
+    display: inline-block;
+    margin-left: 10px;
+}*/
+section#selectores-css ul li a:hover {
+    color:#2ecc71;
+}
+section#posicionamiento {
+    background: #c0392b;
+    color:#f1c40f;
+}
+div#positionContainer {
+    background: #e74c3c;
+    border: solid 1px #d35400;
+    text-align: center;
+    padding: 10px;
+    height: 150px;
+    position: relative;
+    display: none;
+    margin: 0 auto 40px;
+}
+div#positionContainer div {
+    width: 170px;
+    padding: 40px 0;
+    display: block;
+    color:#FFF;
+}
+div#absolute {
+    background: red;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+div#relative {
+    position: relative;
+    background: green;
+}
+div#fixed {
+    background: blue;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+#startDemo , #stopDemo {
+    display: inline-block;
+    padding: 20px;
+    border-radius: 3px;
+    color:#FFF;
+}
+#startDemo {
+    background: #1abc9c;
+    margin-bottom: 10px;
+}
+#stopDemo {
+    background: #e74c3c;
+    margin-top: 20px;
+    display: none;
+}
+section#flotarColumnas {
+    background: #3498db;
+    color:#34495e;
+}
+section#flotarColumnas pre {
+    background:#2980b9;
+    color:#FFF; 
+}
+section#flotarColumnas .container {
+                        width:100%;
+                        background:#FFF;
+                        text-align: center;
+                        padding: 10px;
+                        color:#FFF;
+                    }
+section#flotarColumnas .container .l {
+                        float:left;
+                        background:green;
+                        width: 40%;
+                        height: 100px;
+                    }
+section#flotarColumnas .container .r {
+                        float:right;
+                        background:red;
+                        width:50%;
+                        height: 100px;
+                    }
+section#flotarColumnas .container .clear {
+                        clear:both;
+                    }
+section#pseudoClases {
+    background: #ecf0f1;
+}
+section#pseudoClases a {
+    background: blue;
+    padding: 10px 20px;
+    margin-top: 10px;
+    display: table;
+}
+section#pseudoClases a:hover {
+    background: red;
+}
+section#pseudoClases a:focus {
+    background: orange;
+}
+section#pseudoClases a.active {
+    background: green;
+}
+section#pseudoClases pre {
+    border:solid 1px #CCC;
+}
+ul#plantel li {
+    list-style: none;
+    float: left;
+    display: inline-block;
+    width: 20%;
+    color: #f1c40f;
+    text-align: center;
+    padding: 5px;
+    background: #000;
+}
+ul#plantel li:hover {
+    background: #f1c40f;
+    color:#000;
+}
+ul#plantel li:nth-child(2) {background:green;}
+ul#plantel li:first-line {background:orange;}
+ul#plantel li:first-letter {color:white;}
+ul#plantel:before {content:"before content"; color:red;}
+ul#plantel:after {content:"after content"; color:blue;}
+ul#plantel li:last-child {color:red;}
+ul#plantel li:nth-child(odd) { border-right:solid 1px red;}
+ul#plantel li:nth-child(even) { border-right:solid 1px green;}
+ul#plantel li:nth-child(-n+8) {background:#e74c3c;}
+ul#plantel li:nth-child(4n-7) {background:#7f8c8d;}
 
+section#tooltip {
+    background: #2ecc71;
+    color:#ecf0f1;
+}
+section#tooltip a#tooltipLink {
+    padding: 20px;
+    display: table;
+    position: relative;
+    background: #16a085;
+    margin: 40px auto 60px;
+}
+section#tooltip a#tooltipLink:before , section#tooltip a#tooltipLink:after {
+    position: absolute;
+    display: none;
+    background: rgba(0,0,0,0.5);
+    padding: 5px;
+    width:200px;
+    color:#FFF;
+    text-align: center;
+}
+section#tooltip a#tooltipLink:before {
+    content:"Hey! I´m a before";
+    top:-40px;
+    right: 0;
+}
+section#tooltip a#tooltipLink:hover:before , section#tooltip a#tooltipLink:hover:after{
+    display: block;
+}
+section#tooltip a#tooltipLink:after {
+    content:"And I´m an after";
+    bottom:-40px;
+    left: 0;
+}
+section#form {
+    background: #e74c3c;
+    color:#FFF;
+}
+form{ padding: 50px; width: 50%;margin: 0 auto; float: left;}
+label{ margin-top: 10px; display: block; font-size: 18px; color: #fff;font-weight: 300;}
+label span {
+    display: block;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.66);
+}
 
+/*General Input*/
+input {
+    width: 100%;
+    background: #FFFFFF;
+    transition: all 0.3s;
+    display: inline-block;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: 1px solid #DC1B1B;
+    color: #34495e;
+    font-size: 25px;
+    margin: 10px 0;
+    line-height: 45px;
+}
+/*Calidation styles*/
+/*Only on focus*/
+input:focus{ color: #222; background: #97ABBE; border-color:#999;}
+/*Only on valid*/
+input:valid{box-shadow: 0 0 2px rgba(0,255,0,0.4);}
+/*Only on focus and valid*/
+input:valid:focus{ background: #F5BAB3; box-shadow: none; color:green; }
+/*Only on invalid*/
+input:invalid {
+    box-shadow: 0 0 0px 2px rgba(172, 23, 23, 0.25);
+    background: rgba(172, 23, 23, 0.72);
+    color: #F63535;
+}
+/*Only on focus and invalid*/
+input:invalid:focus{ background: #CB9089; box-shadow: none;}
 
-
-
-
-
+section#layoutPattern {
+    background: #f1c40f;color: #c0392b;
+}
+section#layoutPattern .row div {
+    height: 150px;
+    display: inline-block;
+    float: left;
+}
+section#layoutPattern .row div:nth-child(5n-3) {
+    background: #16a085;
+    width:73%;
+    margin-right:2%;
+}
+section#layoutPattern .row div:nth-child(5n-7) {
+    background: #1abc9c;
+    width:25%;
+    margin-bottom:10px;
+}
+section#layoutPattern .row div:nth-child(5n-6) {
+    background: #3498db;
+    width:18%;
+    margin-right:2%;
+}
+section#layoutPattern .row div:nth-child(5n-5) {
+    background: #e74c3c;
+    width:45%;
+}
+section#layoutPattern .row div:nth-child(5n-4) {
+    background: #c0392b;
+    width:33%;
+    margin-bottom:10px;
+    margin-left:2%;
+}
 
 
 
@@ -193,6 +545,76 @@ textarea {
 
 @media only screen and (min-width: 35em) {
     /* Style adjustments for viewports that meet the condition */
+}
+@media(max-width:1140px) {
+    section#media-queries {
+        background: #1abc9c;
+        color:#ecf0f1;
+        }
+    section#media-queries pre {
+        color: #ecf0f1;
+        background:#16a085;
+        }
+    }
+@media(max-width:960px) {
+    section#media-queries {
+        background: #13293F;
+        color:#e67e22;
+        }
+    section#media-queries pre {
+        color: #fff;
+        background:#e67e22;
+        }
+    }
+@media(max-width:800px) {
+    section#media-queries {
+    background: #9b59b6;
+    color:#bdc3c7;
+    }
+    section#media-queries pre {
+        color: #ecf0f1;
+        background:#8e44ad;
+        }
+}
+@media(max-width:720px) {
+    section#media-queries {
+    background: #e74c3c;
+    color:#f1c40f;
+    }
+    section#media-queries pre {
+        color: #c0392b;
+        background:#f1c40f;
+        }
+}
+@media(max-width:600px) {
+    section#media-queries {
+    background: #e74c3c;
+    color:#f1c40f;
+    }
+    section#media-queries pre {
+        color: #f1c40f;
+        background:#c0392b;
+        }
+}
+@media(max-width:480px) {
+    section#media-queries {
+    background: #bdc3c7;
+    color:#8e44ad;
+    }
+    section#media-queries pre {
+        color: #FFF;
+        background:#000000;
+        }
+}
+@media(max-width:320px) {
+    section#media-queries {
+    background: red;
+    color:yellow;
+    }
+    section#media-queries pre {
+        color: orange;
+        background:brown;
+        }
 }
 
 @media print,

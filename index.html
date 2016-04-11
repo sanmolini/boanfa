@@ -9,11 +9,14 @@
 
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
-
+        <link rel="icon" href="apple-touch-icon.png">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/animate.css">
         <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Alegreya+Sans:400,300' rel='stylesheet' type='text/css'>
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
@@ -22,7 +25,360 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <p class="animated rubberBand"><i class="fa fa-code fa-spin fa-5x"></i>Hello world! This is HTML5 Boilerplate.</p>
+        <div id="preloader"><h1 class="animated tada">WELCOME!!!</h1></div>
+        <header class="animated bounceInDown">
+            <h1>
+                Molini´s CSS Tips <i class="fa fa-css3 animated bounceInDown"></i>
+                <span>Workshop</span>
+            </h1>
+        </header>
+        <nav class="navigation">
+            <ul>
+                <a class="menuIcon  animated bounceInUp" href="#"><i class="fa fa-bars fa-1x"></i></a>
+                <h2>Temario:</h2>
+                <li><a href="#media-queries"><i class="fa fa-arrow-circle-right"></i>Media-queries</a></li><!--
+             --><li><a href="#selectores-css"><i class="fa fa-arrow-circle-right"></i>Selectores CSS</a></li><!--
+             --><li><a href="#posicionamiento"><i class="fa fa-arrow-circle-right"></i>Posicionamiento de elementos</a></li><!--
+             --><li><a href="#flotarColumnas"><i class="fa fa-arrow-circle-right"></i>Flotar 2 columnas</a></li><!--
+             --><li><a href="#pseudoClases"><i class="fa fa-arrow-circle-right"></i>Pseudo-classes y :hover effects</a></li><!--
+             --><li><a href="#tooltip"><i class="fa fa-arrow-circle-right"></i>Tooltip con :before y :after</a></li><!--
+             --><li><a href="#form"><i class="fa fa-arrow-circle-right"></i>Forms - html5 validation</a></li><!--
+             --><li><a href="#layoutPattern"><i class="fa fa-arrow-circle-right"></i>Patrones de layout con nth-child</a></li>
+            </ul>
+        </nav>
+        <section id="media-queries" class="">
+            <div class="row">
+                <h1>MEDIA-QUERIES</h1>
+                <p>Las Media Queries son consultas de las características del medio donde se está visualizando una web y nos sirven para definir estilos condicionales, que solo se aplicarán en caso que esa consulta del medio sea satisfactoria.</p>
+                <div class="row">
+                    <h3>Ejemplo:</h3>
+ <pre>
+ @media(max-width:768px) {
+    .clase {
+        propiedad: tributo;
+        }
+    }
+</pre>                   
+                </div>
+                <div class="row">
+                    <h3>Aplicación:</h3>
+                    <pre>
+@media(max-width:768px) {
+    section.media-queries {
+        background: #1abc9c;
+        }
+    }
+@media(max-width:640px) {
+    section.media-queries {
+        background: #2c3e50;
+        }
+    }
+@media(max-width:480px) {
+    section.media-queries {
+        background: #9b59b6;
+        }
+    }
+                    </pre>
+                    <p>Más información: 
+                    <ul>
+                        <li><a href="https://css-tricks.com/logic-in-media-queries/">Lógica</a> </li>
+                        <li><a href="https://css-tricks.com/snippets/css/media-queries-for-standard-devices/">Standard devices</a></li>
+                    </ul></p>
+                </div>
+            </div>
+        </section>
+        <section id="selectores-css">
+            <div class="row">
+                <h1>Selectores CSS</h1>
+                <p>Una regla de CSS está formada por una parte llamada "selector" y otra parte llamada "declaración".<br>
+                La declaración indica "qué hay que hacer" y el selector indica "a quién hay que hacérselo". Por lo tanto, los selectores son imprescindibles para aplicar de forma correcta los estilos CSS en una página.<br>
+                A un mismo elemento HTML se le pueden aplicar varias reglas CSS y cada regla CSS puede aplicarse a un número ilimitado de elementos. En otras palabras, una misma regla puede aplicarse sobre varios selectores y un mismo selector se puede utilizar en varias reglas.<br>
+                El estándar de CSS 2.1 incluye una docena de tipos diferentes de selectores, que permiten seleccionar de forma muy precisa elementos individuales o conjuntos de elementos dentro de una página web.<br>
+                No obstante, la mayoría de páginas de los sitios web se pueden diseñar utilizando solamente los cinco selectores básicos.
+                </p>
+                <div class="row">
+                    <h4>Selector universal:</h4>
+                    <p>Se utiliza para seleccionar todos los elementos de la página. El siguiente ejemplo elimina el margen y el relleno de todos los elementos HTML (por ahora no es importante fijarse en la parte de la declaración de la regla CSS):</p>
+                    <pre>
+* {
+    margin: 0;
+    padding: 0;
+}                        
+                    </pre>
+                    <p>Otra utilidad es para aplicarle un estilo a todos los elementos dentro de otro. En el caso de que quisieramos agregarle color negro a todos los textos dentro de un "ul" con clase <br>"menu-secundario":</p>
+                    <pre>
+ul.menu-secundario *{
+    color:#000;
+}
+                    </pre>
+                </div>
+                <div class="row">
+                    <h4>Agrupar selectores:</h4>
+                    <p>CSS permite agrupar todas las reglas individuales en una sola regla con un selector múltiple. Para ello, se incluyen todos los selectores separados por una coma (,)</p>
+                    <pre>
+h1, h2, h3 {
+    color: #8A8E27;
+    font-weight: normal;
+    font-family: Arial, Helvetica, sans-serif;
+    }
+                    </pre>
+                </div>  
+                 <div class="row">
+                    <h4>Selectores descendentes:</h4>
+                    <p>Selecciona los elementos que se encuentran dentro de otros elementos. Un elemento es descendiente de otro cuando se encuentra entre las etiquetas de apertura y de cierre del otro elemento.</p>
+                    <pre>
+p span { color: red; }
+                    </pre>
+                </div>
+                <div class="row">
+                    <h4>Selector de hijos:</h4>
+                    <p>Se trata de un selector similar al selector descendente, pero muy diferente en su funcionamiento. Se utiliza para seleccionar un elemento que es hijo directo de otro elemento y se indica mediante el "signo de mayor que" (>):</p>
+                    <pre>
+p > span { color: blue; }
+                    </pre>
+                </div>
+                <div class="row">
+                    <h4>Selector adyacente:</h4>
+                    <p>El selector adyacente se emplea para seleccionar elementos que en el código HTML de la página se encuentran justo a continuación de otros elementos. Su sintaxis emplea el signo + para separar los dos elementos:</p>
+                    <pre>
+elemento1 + elemento2 { ... }
+                    </pre>
+                    <p>Referencia y más información:
+                        <ul>
+                            <li><a href="http://www.w3schools.com/cssref/css_selectors.asp">w3schools</a></li>
+                            <li><a href="http://librosweb.es/libro/css/capitulo_2.html">Selectores básicos(librosWeb) </a></li>
+                            <li><a href="http://librosweb.es/libro/css_avanzado/capitulo_3/selectores_de_css_3.html">Selectores avanzados</a></li>
+                        </ul> 
+                    </p>  
+                </div>    
+            </div>
+        </section>
+        <section id="posicionamiento">
+            <div class="row">
+                <h1>Posicionamiento</h1>
+                <p>Al utilizar el posicionamiento, por lo general son 3 las opciones que se utilizan.</p>
+                <a href="javascript:;" id="startDemo">Activar demo</a>
+                <div id="positionContainer">
+                    <h6>Contenedor</h6>
+                    <div id="absolute">Absolute</div>
+                    <div id="relative">Relative</div>
+                    <div id="fixed">Fixed</div>
+                </div>
+                <a href="javascript:;" id="stopDemo">Desactivar demo</a>
+            </div>
+        </section>
+        <section id="flotarColumnas">
+            <div class="row">
+                <h1>Flotar 2 columnas.</h1>
+                <p>Manera simple de maquetar 2 columnas con floats.</p>
+                <p>HTML</p>
+                <pre>
+                    < div class="container">
+                        < div class="l"> Left Col < /div>
+                        < div class="r"> Right Col < /div>
+                        < div class="clear">< /div>
+                    < /div>
+                </pre>
+                <p>CSS</p>
+                <pre>
+                    .container {
+                        width:300px;
+                    }
+                    .container .l {
+                        float:left;
+                        color:green;
+                    }
+                    .container .r {
+                        float:right;
+                        color:red;
+                    }
+                    .container .clear {
+                        clear:both;
+                    }
+                </pre>
+                <p>Ejemplo:</p>
+                <div class="container">
+                        <div class="l"> Left Col </div>
+                        <div class="r"> Right Col </div>
+                        <div class="clear"></div>
+                    </div>
+            </div>
+        </section>
+        <section id="pseudoClases">
+            <div class="row">
+                <h1>Pseudo-clases y Pseudo-elementos</h1>
+                <p>Una pseudoclase CSS es una palabra clave que se añade a los selectores y que especifica un estado especial del elemento seleccionado.<br>
+                Por ejemplo,  :hover aplicará un estilo cuando el usuario haga hover sobre el elemento especificado por el selector.<br><br>
+                Algunas de las más utilizadas son:
+                <ul>
+                    <li>:hover</li>
+                    <li>:focus</li>
+                    <li>:active</li>
+                    <li>:first-child</li>
+                    <li>:first-line</li>
+                    <li>:first-letter</li>
+                    <li>:before</li>
+                    <li>:after</li>
+                    <li>:nth-child</li>
+                    <li>:last-child</li>
+                    <li>:odd</li>
+                    <li>:even</li>
+                </ul>
+                </p>
+                <h4>Ejemplos:</h4>
+                <h5>Pseudo-clases</h5>
+                <pre>
+                    a {background:blue;}
+                    a:hover {background:red;}
+                    a:focus {background:orange;}
+                    a:active {background:green;}
+                </pre>
+                <a id="hover" href="#hover">Example</a>
+                <h5>Pseudo-elementos</h5>
+                <ul id="plantel">
+                    <h5>Prueba</h5>
+                    <li>Gaston</li>
+                    <li>Damian</li>
+                    <li>Mathias</li>
+                    <li>Carlos</li>
+                    <li>Guillermo</li>
+                    <li>Maxi O</li>
+                    <li>Nahitan</li>
+                    <li>Tomas</li>
+                    <li>Luis</li>
+                    <li>Maxi R</li>
+                    <li>Diego</li>
+                    <li>Miguel</li>
+                    <li>Gianni</li>
+                    <li>Frabrizio</li>
+                    <li>Emiliano</li>
+                    <li>Diogo</li>
+                    <li>Hernan</li>
+                    <li>Marcel</li>
+                    <li>Andres</li>
+                    <li>Federico</li>
+                    <li>Nicolas</li>
+                    <li>Rodrigo</li>
+                    <li>Mauricio</li>
+                    <li>Cristian</li>
+                    <li>Orosman</li>
+                </ul>
+                <pre>
+                    li:first-child {background: green;}
+                    li:first-line {background:orange;}
+                    li:first-letter {color:red;}
+                    ul:before {content:"before content"; color:red;}
+                    ul:after {content:"after content"; color:blue;}
+                    li:last-child {color:red;}
+                    li:nth-child(odd) { border-right:solid 1px red;}
+                    li:nth-child(even) { border-right:solid 1px green;}
+                    ul#plantel li:nth-child(-n+8) {background:#e74c3c;}
+                    ul#plantel li:nth-child(4n-7) {background:#7f8c8d;}
+                </pre>
+            <p>Referencias: <a target="_blank" href="http://librosweb.es/libro/css_avanzado/capitulo_3/pseudo_clases.html">Pseudo-clases</a> y  <a target="_blank" href="https://css-tricks.com/useful-nth-child-recipies/">nth-child</a></p>   
+            </div>
+        </section>
+        <section id="tooltip">
+            <div class="row">
+                <h1>Tooltip con :before o :after</h1>
+            <p>Breve tutorial para realizar un tooltip de manera simple y sencilla.</p>
+            <h5>Ejemplo:</h5>
+            <a id="tooltipLink" href="#tooltipLink">HOVER ME! ;)</a>
+            <pre>
+/* Defino apariencia del elemento */            
+section#tooltip a#tooltipLink {
+    padding: 20px;
+    display: table;
+    position: relative;
+    background: #16a085;
+    margin: 40px auto;
+}
+/* Defino apariencia y posición de los pseudo-elementos  */  
+section#tooltip a#tooltipLink:before , section#tooltip a#tooltipLink:after {
+    position: absolute;
+    display: none;
+    background: rgba(0,0,0,0.5);
+    padding: 5px;
+    width:200px;
+    color:#FFF;
+    text-align: center;
+}
+section#tooltip a#tooltipLink:before {
+    content:"Hey! I´m a before";
+    top:-40px;
+    right: 0;
+}
+section#tooltip a#tooltipLink:after {
+    content:"And I´m an after";
+    bottom:-40px;
+    left: 0;
+}
+/* Al hacer hover en el elemento, muestro los pseudo-elementos  */  
+section#tooltip a#tooltipLink:hover:before , section#tooltip a#tooltipLink:hover:after{
+    display: block;
+}
+
+            </pre>
+            </div>
+        </section>
+        <section id="form">
+            <div class="row">
+                <h1>Forms - Validación html5</h1>
+                <div class="col-md-12">
+                    <form>
+                        <label>Nombre <span><strong>Pattern</strong> - [A-Za-z0-9]{5,50}</span></label>
+                        <input autocomplete="off" type="text" pattern="[A-Za-z0-9]{5,50}" required="" />
+                        <label>Twiter User (@username) <span><strong>Pattern</strong> - @[A-Za-z0-9_{5,50}$</span></label>
+                        <input autocomplete="off" type="text" pattern="@[A-Za-z0-9]{5,50}" required="" />
+                        <label>Tag (#tag) <span><strong>Pattern</strong> - #[A-Za-z0-9_{3,15}</span></label>
+                        <input autocomplete="off" type="text" pattern="#[A-Za-z0-9]{3,15}" required="" />
+                    </form>
+                    <form>
+                        <label>Web (http://www.name.ext) <span><strong>Pattern</strong> - http://www\.[A-Za-z0-9]{3,50}\.[-A-Za-z0-9]{2,3}</span></label>
+                        <input autocomplete="off" type="text" pattern="http://www\.[A-Za-z0-9]{3,50}\.[-A-Za-z0-9]{2,3}" required="" />
+                        <label>Mail Gmail (name@gmail.com) <span><strong>Pattern</strong> - [A-Za-z0-9]{1,50}\@gmail\.com</span></label>
+                        <input autocomplete="off" type="text" pattern="[A-Za-z0-9]{1,50}\@gmail\.com" required="" />
+                        <label>Tarjeta de crédito<br> (0000-0000-0000-0000) <span><strong>Pattern</strong> - ([0-9]{4}\-){3}[0-9]{4}</span></label>
+                        <input autocomplete="off" type="text" pattern="([0-9]{4}\-){3}[0-9]{4}" required="" />
+                    </form>
+                    <pre>
+< input autocomplete="off" type="text" pattern="[A-Za-z0-9]{5,50}" required="" />                        
+
+Pseudo-class >>> :valid & :invalid
+ 
+input:valid {
+    box-shadow: 0 0 2px rgba(0,255,0,0.4);
+}
+
+input:invalid {
+    box-shadow: 0 0 0px 2px rgba(172, 23, 23, 0.25);
+    background: rgba(172, 23, 23, 0.72);
+    color: #F63535;
+}
+
+                    </pre>
+                </div>
+            </div>
+        </section>
+        <section id="layoutPattern">
+            <div class="row">
+                <h1>Patrones de layout con nth-child</h1>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </section>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
